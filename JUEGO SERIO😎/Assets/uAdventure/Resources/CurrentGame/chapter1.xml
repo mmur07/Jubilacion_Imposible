@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eAdventure version="2">
+  <player>
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#B1F5DD" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <character id="Abuelo" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/IdleHarold.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="IntroduccionProblema1" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="PlayerPos" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <scene id="Abuelo1" hideInventory="no" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/hide-the-pain-harold.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="Abuelo" x="651" y="691" scale="1.019382" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
+  </scene>
+  <scene id="Problema_1" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/capturaGmail.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="SalirEscritorio" x="1364" y="759" scale="0.08549867" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <characters>
+      <character-ref idTarget="PlayerPos" x="716" y="614" scale="0.01" orientation="2" layer="1" hasInfluenceArea="no" />
+    </characters>
+    <active-areas>
+      <active-area id="SolucionProblema1" rectangular="yes" x="146" y="168" width="317" height="32" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <activate flag="Encontrado_1.1" />
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+      <active-area id="SolucionProblema2" rectangular="yes" x="146" y="210" width="823" height="56" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <activate flag="Encontrado_1.2" />
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <scene id="Problema_1_Lose" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/haroldPierde.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <object id="CapturaGmail" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/capturaGmail.jpg" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="SalirEscritorio" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/ReturnEscritorio.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="100" transitionType="2" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <graph-conversation id="IntroduccionProblema1">
+    <dialogue-node nodeindex="0" editor-x="403" editor-y="71">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Hola mi querido nieto. ¿Cómo estás?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="CorreoVisto" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Bien. ¿Cómo te va con el nuevo ordenador?</text>
+      </speak-player>
+      <condition>
+        <inactive flag="CorreoVisto" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>No te lo vas a creer. ¡Acabo de recibir el mejor correo de mi vida!</text>
+      </speak-char>
+      <condition>
+        <inactive flag="CorreoVisto" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Cómo?</text>
+      </speak-player>
+      <condition>
+        <inactive flag="CorreoVisto" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Andrei, el famoso príncipe Georgiano me acaba de pedir ayuda para guardarle su dinero.</text>
+      </speak-char>
+      <condition>
+        <inactive flag="CorreoVisto" />
+      </condition>
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="750" editor-y="49" x="750" y="49">
+      <speak-player>
+        <text>¡Genial! ¿Cuando pasamos a recogerlo?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿No te parece un poco sospechoso? Dejame mirar  el correo un segundo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>Es un obvio caso de phishing. Mira las primeras lineas.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_1.1" />
+      </condition>
+      <child nodeindex="4" />
+      <speak-player>
+        <text>En Georgia no hay príncipes abuelo...</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_1.2" />
+      </condition>
+      <child nodeindex="5" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="1039" editor-y="21">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Que va! Mucho más fácil. Solo le tengo que dejar mis datos bancarios.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Anda, pásame la tarjeta, lo hago en un momento.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="6" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1591" editor-y="298">
+      <child nodeindex="7" />
+      <effect>
+        <trigger-scene idTarget="Problema_1" x="722" y="609" transitionTime="1000" transitionType="1" />
+        <condition />
+        <activate flag="CorreoVisto" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1511" editor-y="540">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Qué es eso?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Si, es una técnica muy común llamada Phishing donde suplantan a alguien para que cometas acciones que no tendrías que realizar.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿En serio?, de verdad no era un príncipe georgiano, parecía muy convincente.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No, en este caso quería tus datos bancarios, seguramente en el correo te los pedíria.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="Superado1" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="730" editor-y="474">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Cómo? No soy un experto en la región pero...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Estoy seguro que si que hay!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Pero si lo he dado en historia...</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="8" />
+    </dialogue-node>
+    <option-node nodeindex="6" preListening="yes" editor-x="1307" editor-y="12" x="1307" y="12">
+      <speak-player>
+        <text>Aquí tienes abuelo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="9" />
+      <speak-player>
+        <text>¿Cómo? ¿No es sospechoso? Dejame mirar el correo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="7" editor-x="1888" editor-y="338">
+      <speak-char idTarget="PlayerPos">
+        <resources name="No name">
+          <asset type="image" uri="assets/image/hide-the-pain-harold.jpg" />
+        </resources>
+        <text>#O Debo examinar el correo en busca de fraudes.</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <show-text x="150" y="150" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">#O ejemplo de texto</show-text>
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <option-node nodeindex="8" preListening="yes" editor-x="1038" editor-y="484" x="1038" y="484">
+      <speak-player>
+        <text>Bueno, si tu dices que es convincente... Adelante.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="9" />
+      <speak-player>
+        <text>Es un obvio caso de phishing. Mira las primeras lineas.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_1.1" />
+      </condition>
+      <child nodeindex="4" />
+      <speak-player>
+        <text>Dejame ver el correo un momento.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="9" editor-x="1767" editor-y="28">
+      <child nodeindex="10" />
+      <effect>
+        <trigger-scene idTarget="Problema_1_Lose" x="150" y="337" transitionTime="4000" transitionType="5" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="10" editor-x="2035" editor-y="28">
+      <speak-char idTarget="PlayerPos">
+        <resources name="No name" />
+        <text>#O Días más tarde, a Harold le robaron miles de euros de su cuenta bancaria.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Tras investigar un poco, descubrí que fue víctima de una estafa muy común.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Es una técnica muy común llamada Phishing donde suplantan a alguien para que cometas acciones que no tendrías que realizar.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Harold ya no se podrá ir de viaje a las islas Caimán.</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+</eAdventure>
