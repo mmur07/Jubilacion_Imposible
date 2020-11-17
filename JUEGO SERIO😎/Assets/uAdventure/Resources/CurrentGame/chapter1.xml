@@ -191,6 +191,61 @@
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
+  <scene id="Problema_2" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/MensajeEusebia.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="SalirProblema2" x="1271" y="725" scale="0.09782628" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <active-areas>
+      <active-area id="SolucionProblema2_1" rectangular="yes" x="940" y="82" width="185" height="34" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <speak-player>Al parecer Harold ya ha agregado a esta persona...</speak-player>
+              <condition />
+              <activate flag="Encontrado_2.1" />
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+      <active-area id="SolucionProblema2_2" rectangular="yes" x="280" y="618" width="598" height="73" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <speak-player>Debería preguntar qué es esto del martes...</speak-player>
+              <condition />
+              <activate flag="Encontrado_2.2" />
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
   <scene id="Problema_4Inicio" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -296,6 +351,28 @@
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <effect>
           <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="100" transitionType="2" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="SalirProblema2" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/ReturnEscritorio.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="1" />
           <condition />
         </effect>
       </use>
@@ -522,6 +599,371 @@
       </speak-player>
       <condition />
       <child nodeindex="8" />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Problema2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Buenos dias nieto!</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Hoy tengo otra duda, si no te importa.</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Estaba navegando por Facebook y esta persona me ha preguntado por mi número de teléfono.</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Cómo debería proceder?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="690" editor-y="455" x="690" y="455">
+      <speak-player>
+        <text>No debería haber problema, dale tu número de teléfono.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="2" />
+      <speak-player>
+        <text>No he visto nada sospechoso.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="3" />
+      <speak-player>
+        <text>¿Podría ver el mensaje?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+      <speak-player>
+        <text>Deberías bloquearla.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+      <speak-player>
+        <text>¿Sabes a qué se refiere con lo del martes?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_2.1" />
+      </condition>
+      <child nodeindex="6" />
+      <speak-player>
+        <text>Has agregado a esta persona.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_2.2" />
+      </condition>
+      <child nodeindex="7" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="737" editor-y="62">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿No crees que deberías ver el mensaje antes?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Ah si... ¡Claro!</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Problema_2" x="400" y="450" transitionTime="1000" transitionType="1" />
+          <condition />
+          <activate flag="MensajeVisto_Problema2" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1418" editor-y="107">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Estás seguro?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="8" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1374" editor-y="477">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Por supuesto!</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Problema_2" x="400" y="450" transitionTime="1000" transitionType="2" />
+          <condition />
+          <activate flag="MensajeVisto_Problema2" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="1227" editor-y="705">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿En serio?</text>
+      </speak-char>
+      <condition>
+        <active flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>En absoluto. Uno nunca es lo demasiado seguro.</text>
+      </speak-player>
+      <condition>
+        <active flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Podría ser otro caso de phishing.</text>
+      </speak-player>
+      <condition>
+        <active flag="MensajeVisto_Problema2" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Pero... Ni siquiera has visto el mensaje...</text>
+      </speak-player>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="9" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1394" editor-y="1247">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Los martes?</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Ese dia suelo ir al cine y por la tarde...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡El club de petanca, es verdad!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Conoces a esta persona del club de petanca?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>No... ¡Que miedo! ¿Y si me están espiando?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="7" editor-x="1125" editor-y="1537">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿No te suena esta persona?</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Ya sois amigos en Facebook</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>La verdad es que no... Lo siento...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Igual me ha hackeado la cuenta para que la acepte!</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="11" />
+    </dialogue-node>
+    <option-node nodeindex="8" preListening="yes" editor-x="2047" editor-y="73" x="2047" y="73">
+      <speak-player>
+        <text>Si</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="12" />
+      <speak-player>
+        <text>No</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="13" />
+    </option-node>
+    <option-node nodeindex="9" preListening="yes" editor-x="2176" editor-y="895" x="2176" y="895">
+      <speak-player>
+        <text>Déjame mirarlo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="14" />
+      <speak-player>
+        <text>Déjame mirarlo de nuevo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="MensajeVisto_Problema2" />
+      </condition>
+      <child nodeindex="14" />
+      <speak-player>
+        <text>Hazme caso. Bloquéala</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="15" />
+    </option-node>
+    <option-node nodeindex="10" preListening="yes" editor-x="1984" editor-y="1307" x="1984" y="1307">
+      <speak-player>
+        <text>Deberías bloquearla para estar seguro.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+      <speak-player>
+        <text>Igual se nos escapa algo</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="Encontrado_2.1" />
+      </condition>
+      <child nodeindex="16" />
+      <speak-player>
+        <text>Aquí pone que ya la has agregado.</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EusebiaAgregada.jpg" />
+        </resources>
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_2.1" />
+      </condition>
+      <child nodeindex="17" />
+    </option-node>
+    <option-node nodeindex="11" preListening="yes" editor-x="1533" editor-y="1844" x="1533" y="1844">
+      <speak-player>
+        <text>Tienes razon Harold</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="15" />
+      <speak-player>
+        <text>Debería mirar el mensaje de nuevo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="Encontrado_2.1" />
+      </condition>
+      <child nodeindex="16" />
+      <speak-player>
+        <text>¿No te suena esto del martes?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="17" />
+    </option-node>
+    <dialogue-node nodeindex="12" editor-x="2288" editor-y="50">
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="13" editor-x="2300" editor-y="258">
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="14" editor-x="2621" editor-y="899">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Aquí tienes.</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="CorreoVisto" />
+          <condition />
+          <trigger-scene idTarget="Problema_2" x="688" y="558" transitionTime="1000" transitionType="2" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="15" editor-x="2614" editor-y="1177">
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Entendido. Uno nunca está seguro al completo.</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="16" editor-x="2525" editor-y="1445">
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Problema_2" x="688" y="558" transitionTime="1000" transitionType="2" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="17" editor-x="2495" editor-y="1688">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Seguro que no la conoces de nada?</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Pone que la agregaste un día en febrero.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Es verdad, el campeonato de petanca!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Eusebia me ganó en las finales. ¡Nunca me olvidaré de ella!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Pero si lo acaba de hacer...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Entonces no debería haber ningun problema por darle mi número de teléfono.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¡Muchas gracias nieto!</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Problema4">
