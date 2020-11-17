@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment> Project Configuration </comment>
-<entry key="Chapter0.Problema_1.X">83</entry>
-<entry key="Chapter0.Problema_1.Y">49</entry>
+<entry key="Chapter0.Problema_1.X">366</entry>
+<entry key="Chapter0.Problema_1.Y">38</entry>
 <entry key="Chapter0.Abuelo1.X">-303</entry>
 <entry key="Chapter0.Abuelo1.Y">27</entry>
 <entry key="Chapter0.Problema_1_Lose.X">36</entry>
 <entry key="Chapter0.Problema_1_Lose.Y">274</entry>
-<entry key="Chapter0.Problema_2.X">483</entry>
-<entry key="Chapter0.Problema_2.Y">49</entry>
-<entry key="Chapter0.Problema_4.X">474</entry>
-<entry key="Chapter0.Problema_4.Y">249</entry>
-<entry key="Chapter0.Problema_4Inicio.X">473</entry>
-<entry key="Chapter0.Problema_4Inicio.Y">53</entry>
-<entry key="Chapter0.Problema_4Final.X">686</entry>
-<entry key="Chapter0.Problema_4Final.Y">271</entry>
-<entry key="Chapter0.Problema4_Loose.X">505</entry>
-<entry key="Chapter0.Problema4_Loose.Y">385</entry>
+<entry key="Chapter0.Problema_2.X">436</entry>
+<entry key="Chapter0.Problema_2.Y">33</entry>
+<entry key="Chapter0.Problema_3.X">319</entry>
+<entry key="Chapter0.Problema_3.Y">403</entry>
+<entry key="Chapter0.Problema_3_Lose.X">623</entry>
+<entry key="Chapter0.Problema_3_Lose.Y">406</entry>
 </properties>
 

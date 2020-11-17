@@ -64,7 +64,7 @@
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <equals var="capitulosCompletados" value="1" />
+          <equals var="capitulosCompletados" value="0" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Problema1" />
@@ -72,12 +72,12 @@
         </effect>
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <documentation>Created with target conversation: Problema4</documentation>
+        <documentation>Created with target conversation: Problema3</documentation>
         <condition>
-          <equals var="capitulosCompletados" value="0" />
+          <equals var="capitulosCompletados" value="2" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="Problema4" />
+          <trigger-conversation idTarget="Problema3" />
           <condition />
         </effect>
       </talk-to>
@@ -191,20 +191,20 @@
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
-  <scene id="Problema_2" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Problema_3" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/MensajeEusebia.jpg" />
+      <asset type="background" uri="assets/background/yourpcisinfected-homepage.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="SalirProblema2" x="1271" y="725" scale="0.09782628" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="SalirEscritorio" x="708" y="568" scale="0.06187817" layer="0" hasInfluenceArea="no" />
     </objects>
     <active-areas>
-      <active-area id="SolucionProblema2_1" rectangular="yes" x="940" y="82" width="185" height="34" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="EnlaceSeguro" rectangular="yes" x="92" y="45" width="619" height="25" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -216,15 +216,15 @@
         <actions>
           <examine needsGoTo="no" keepDistance="0" not-effects="no">
             <effect>
-              <speak-player>Al parecer Harold ya ha agregado a esta persona...</speak-player>
+              <activate flag="Encontrado_3.2" />
               <condition />
-              <activate flag="Encontrado_2.1" />
+              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">http://www.microsoftware.com/windows/antivirus</show-text>
               <condition />
             </effect>
           </examine>
         </actions>
       </active-area>
-      <active-area id="SolucionProblema2_2" rectangular="yes" x="280" y="618" width="598" height="73" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="Microsoftware" rectangular="no" x="9" y="10" width="234" height="301" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -236,85 +236,29 @@
         <actions>
           <examine needsGoTo="no" keepDistance="0" not-effects="no">
             <effect>
-              <speak-player>Debería preguntar qué es esto del martes...</speak-player>
-              <condition />
-              <activate flag="Encontrado_2.2" />
+              <activate flag="Encontrado_3.1" />
               <condition />
             </effect>
           </examine>
         </actions>
+        <point x="9" y="10" />
+        <point x="196" y="10" />
+        <point x="198" y="40" />
+        <point x="89" y="42" />
+        <point x="90" y="100" />
+        <point x="243" y="102" />
+        <point x="241" y="311" />
+        <point x="126" y="309" />
+        <point x="13" y="311" />
+        <point x="13" y="47" />
       </active-area>
     </active-areas>
   </scene>
-  <scene id="Problema_4Inicio" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Problema_3_Lose" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/viruses.png" />
-    </resources>
-    <name>
-    </name>
-    <default-initial-position x="400" y="450" />
-    <objects>
-      <object-ref idTarget="SalirEscritorio" x="842" y="716" scale="0.05946881" layer="0" hasInfluenceArea="no" />
-    </objects>
-  </scene>
-  <scene id="Problema_4Final" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
-    <documentation>
-    </documentation>
-    <resources name="No name">
-      <asset type="background" uri="assets/background/mail.png" />
-    </resources>
-    <name>
-    </name>
-    <default-initial-position x="400" y="450" />
-    <objects>
-      <object-ref idTarget="SalirEscritorio" x="394" y="415" scale="0.05493735" layer="0" hasInfluenceArea="no" />
-    </objects>
-    <active-areas>
-      <active-area id="Formato" rectangular="yes" x="66" y="107" width="185" height="124" hasInfluenceArea="no" behaviour="normal">
-        <description>
-          <name>
-          </name>
-          <brief>
-          </brief>
-          <detailed>
-          </detailed>
-        </description>
-        <actions>
-          <examine needsGoTo="no" keepDistance="0" not-effects="no">
-            <effect>
-              <activate flag="P4_Formato" />
-              <condition />
-            </effect>
-          </examine>
-        </actions>
-      </active-area>
-      <active-area id="SinAvisar" rectangular="yes" x="62" y="9" width="165" height="20" hasInfluenceArea="no" behaviour="normal">
-        <description>
-          <name>
-          </name>
-          <brief>
-          </brief>
-          <detailed>
-          </detailed>
-        </description>
-        <actions>
-          <examine needsGoTo="no" keepDistance="0" not-effects="no">
-            <effect>
-              <activate flag="P4_SinAvisar" />
-              <condition />
-            </effect>
-          </examine>
-        </actions>
-      </active-area>
-    </active-areas>
-  </scene>
-  <scene id="Problema4_Loose" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
-    <documentation>
-    </documentation>
-    <resources name="No name">
-      <asset type="background" uri="assets/background/30158_adsuara_virus.jpg" />
+      <asset type="background" uri="assets/background/35cwak.jpg" />
     </resources>
     <name>
     </name>
@@ -356,30 +300,8 @@
       </use>
     </actions>
   </object>
-  <object id="SalirProblema2" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
-    <resources name="No name">
-      <asset type="image" uri="assets/image/ReturnEscritorio.png" />
-      <asset type="icon" uri="assets/special/EmptyIcon.png" />
-    </resources>
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-    <actions>
-      <use needsGoTo="yes" keepDistance="35" not-effects="no">
-        <effect>
-          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="1" />
-          <condition />
-        </effect>
-      </use>
-    </actions>
-  </object>
   <graph-conversation id="Problema1">
-    <dialogue-node nodeindex="0" editor-x="403" editor-y="71">
+    <dialogue-node nodeindex="0" editor-x="278" editor-y="67">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>Hola mi querido nieto. ¿Cómo estás?</text>
@@ -601,630 +523,225 @@
       <child nodeindex="8" />
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="Problema2">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+  <graph-conversation id="Problema3">
+    <dialogue-node nodeindex="0" editor-x="84" editor-y="37">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Buenos dias nieto!</text>
+        <text>Hola, querido nieto mio.</text>
       </speak-char>
       <condition>
-        <inactive flag="MensajeVisto_Problema2" />
+        <inactive flag="Superado1" />
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Hoy tengo otra duda, si no te importa.</text>
+        <text>Hoy encontré una página web que me ayuda a detectar los virus.</text>
       </speak-char>
       <condition>
-        <inactive flag="MensajeVisto_Problema2" />
+        <inactive flag="PaginaVisto" />
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Estaba navegando por Facebook y esta persona me ha preguntado por mi número de teléfono.</text>
+        <text>¿Sabes cuándo hay?</text>
       </speak-char>
       <condition>
-        <inactive flag="MensajeVisto_Problema2" />
+        <inactive flag="PaginaVisto" />
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿Cómo debería proceder?</text>
+        <text>¡ Hay 5 !</text>
       </speak-char>
       <condition>
-        <inactive flag="MensajeVisto_Problema2" />
+        <inactive flag="PaginaVisto" />
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="690" editor-y="455" x="690" y="455">
+    <option-node nodeindex="1" preListening="yes" editor-x="306" editor-y="35" x="306" y="35">
       <speak-player>
-        <text>No debería haber problema, dale tu número de teléfono.</text>
+        <text>¿Cómo? Abuelo, tenemos que eliminarlos</text>
         <resources name="No name" />
       </speak-player>
-      <condition>
-        <inactive flag="MensajeVisto_Problema2" />
-      </condition>
+      <condition />
       <child nodeindex="2" />
       <speak-player>
-        <text>No he visto nada sospechoso.</text>
+        <text>¿Qué página? Déjame ver un momento</text>
         <resources name="No name" />
       </speak-player>
-      <condition>
-        <active flag="MensajeVisto_Problema2" />
-      </condition>
+      <condition />
       <child nodeindex="3" />
       <speak-player>
-        <text>¿Podría ver el mensaje?</text>
+        <text>Parece que es un poco largo Microsoftware</text>
         <resources name="No name" />
       </speak-player>
-      <condition />
+      <condition>
+        <active flag="Encontrado_3.2" />
+      </condition>
       <child nodeindex="4" />
       <speak-player>
-        <text>Deberías bloquearla.</text>
+        <text>Estos botones son falsos. </text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_3.1" />
+      </condition>
+      <child nodeindex="5" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="570" editor-y="0">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Cómo eliminamos estos virus?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Muy fácil, solo tengo que descargar la actualización del Antivirus</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="6" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="706" editor-y="263">
+      <child nodeindex="7" />
+      <effect>
+        <trigger-scene idTarget="Problema_3" x="395" y="444" transitionTime="400" transitionType="2" />
+        <condition />
+        <activate flag="PaginaVisto" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <option-node nodeindex="4" preListening="yes" editor-x="133" editor-y="445" x="133" y="445">
+      <speak-player>
+        <text>Déjame ver otra vez</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>Estos botones no son válidos</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_3.2" />
+      </condition>
+      <child nodeindex="5" />
+      <speak-player>
+        <text>Pero siempre es mejor eliminar virus cuando antes</text>
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="5" />
-      <speak-player>
-        <text>¿Sabes a qué se refiere con lo del martes?</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Encontrado_2.1" />
-      </condition>
-      <child nodeindex="6" />
-      <speak-player>
-        <text>Has agregado a esta persona.</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Encontrado_2.2" />
-      </condition>
-      <child nodeindex="7" />
+      <child nodeindex="2" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="737" editor-y="62">
+    <dialogue-node nodeindex="5" editor-x="462" editor-y="601">
+      <speak-player>
+        <resources name="No name" />
+        <text>No es una página real. Es fraudulento</text>
+      </speak-player>
+      <condition />
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿No crees que deberías ver el mensaje antes?</text>
+        <text>¿Por qué? pero me ayudo a encontrar virus.</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Ah si... ¡Claro!</text>
+        <text>Quiere conseguir tu confianza, y te pide que descargues cosas, puede ser un malware</text>
       </speak-player>
       <condition />
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Problema_2" x="400" y="450" transitionTime="1000" transitionType="1" />
-          <condition />
-          <activate flag="MensajeVisto_Problema2" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="1418" editor-y="107">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿Estás seguro?</text>
+        <text>Oh, ooo! entonces como elimino los virus.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Espere que te hago una examinación con antivirus que tienes instalados ....</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Abuelo, el antivirus dice que estas visitando por una página con virus, que tengas cuidado con esa página.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Ay, lo cierro ahora.</text>
       </speak-char>
       <condition />
       <child nodeindex="8" />
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="1374" editor-y="477">
-      <speak-char idTarget="Abuelo">
+    <option-node nodeindex="6" preListening="yes" editor-x="779" editor-y="0" x="779" y="0">
+      <speak-player>
+        <text>Ah! Vamos a actualizarla.</text>
         <resources name="No name" />
-        <text>¡Por supuesto!</text>
-      </speak-char>
+      </speak-player>
       <condition />
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Problema_2" x="400" y="450" transitionTime="1000" transitionType="2" />
-          <condition />
-          <activate flag="MensajeVisto_Problema2" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="1227" editor-y="705">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¿En serio?</text>
-      </speak-char>
-      <condition>
-        <active flag="MensajeVisto_Problema2" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>En absoluto. Uno nunca es lo demasiado seguro.</text>
-      </speak-player>
-      <condition>
-        <active flag="MensajeVisto_Problema2" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>Podría ser otro caso de phishing.</text>
-      </speak-player>
-      <condition>
-        <active flag="MensajeVisto_Problema2" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>Pero... Ni siquiera has visto el mensaje...</text>
-      </speak-player>
-      <condition>
-        <inactive flag="MensajeVisto_Problema2" />
-      </condition>
       <child nodeindex="9" />
-    </dialogue-node>
-    <dialogue-node nodeindex="6" editor-x="1394" editor-y="1247">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¿Los martes?</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Ese dia suelo ir al cine y por la tarde...</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¡El club de petanca, es verdad!</text>
-      </speak-char>
-      <condition />
       <speak-player>
+        <text>¿Actualizar? abuelo, los software se actualiza en WindowStore</text>
         <resources name="No name" />
-        <text>¿Conoces a esta persona del club de petanca?</text>
       </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>No... ¡Que miedo! ¿Y si me están espiando?</text>
-      </speak-char>
       <condition />
       <child nodeindex="10" />
-    </dialogue-node>
-    <dialogue-node nodeindex="7" editor-x="1125" editor-y="1537">
-      <speak-player>
-        <resources name="No name" />
-        <text>¿No te suena esta persona?</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Ya sois amigos en Facebook</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>La verdad es que no... Lo siento...</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¡Igual me ha hackeado la cuenta para que la acepte!</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="11" />
-    </dialogue-node>
-    <option-node nodeindex="8" preListening="yes" editor-x="2047" editor-y="73" x="2047" y="73">
-      <speak-player>
-        <text>Si</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="12" />
-      <speak-player>
-        <text>No</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="13" />
     </option-node>
-    <option-node nodeindex="9" preListening="yes" editor-x="2176" editor-y="895" x="2176" y="895">
+    <dialogue-node nodeindex="7" editor-x="839" editor-y="421">
       <speak-player>
-        <text>Déjame mirarlo.</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <inactive flag="MensajeVisto_Problema2" />
-      </condition>
-      <child nodeindex="14" />
-      <speak-player>
-        <text>Déjame mirarlo de nuevo.</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="MensajeVisto_Problema2" />
-      </condition>
-      <child nodeindex="14" />
-      <speak-player>
-        <text>Hazme caso. Bloquéala</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="15" />
-    </option-node>
-    <option-node nodeindex="10" preListening="yes" editor-x="1984" editor-y="1307" x="1984" y="1307">
-      <speak-player>
-        <text>Deberías bloquearla para estar seguro.</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="5" />
-      <speak-player>
-        <text>Igual se nos escapa algo</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <inactive flag="Encontrado_2.1" />
-      </condition>
-      <child nodeindex="16" />
-      <speak-player>
-        <text>Aquí pone que ya la has agregado.</text>
         <resources name="No name">
-          <asset type="image" uri="assets/image/EusebiaAgregada.jpg" />
+          <asset type="image" uri="assets/image/hide-the-pain-harold.jpg" />
         </resources>
-      </speak-player>
-      <condition>
-        <active flag="Encontrado_2.1" />
-      </condition>
-      <child nodeindex="17" />
-    </option-node>
-    <option-node nodeindex="11" preListening="yes" editor-x="1533" editor-y="1844" x="1533" y="1844">
-      <speak-player>
-        <text>Tienes razon Harold</text>
-        <resources name="No name" />
+        <text>Debo examinar la página en busca de fraudes.</text>
       </speak-player>
       <condition />
-      <child nodeindex="15" />
-      <speak-player>
-        <text>Debería mirar el mensaje de nuevo.</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <inactive flag="Encontrado_2.1" />
-      </condition>
-      <child nodeindex="16" />
-      <speak-player>
-        <text>¿No te suena esto del martes?</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="17" />
-    </option-node>
-    <dialogue-node nodeindex="12" editor-x="2288" editor-y="50">
       <end-conversation />
     </dialogue-node>
-    <dialogue-node nodeindex="13" editor-x="2300" editor-y="258">
-      <child nodeindex="1" />
-    </dialogue-node>
-    <dialogue-node nodeindex="14" editor-x="2621" editor-y="899">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Aquí tienes.</text>
-      </speak-char>
-      <condition />
+    <dialogue-node nodeindex="8" editor-x="1728" editor-y="684">
       <end-conversation>
         <effect>
-          <activate flag="CorreoVisto" />
+          <set-value var="capitulosCompletados" value="3" />
           <condition />
-          <trigger-scene idTarget="Problema_2" x="688" y="558" transitionTime="1000" transitionType="2" />
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="0" transitionType="0" />
           <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="15" editor-x="2614" editor-y="1177">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Entendido. Uno nunca está seguro al completo.</text>
-      </speak-char>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-    <dialogue-node nodeindex="16" editor-x="2525" editor-y="1445">
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Problema_2" x="688" y="558" transitionTime="1000" transitionType="2" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="17" editor-x="2495" editor-y="1688">
-      <speak-player>
-        <resources name="No name" />
-        <text>¿Seguro que no la conoces de nada?</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Pone que la agregaste un día en febrero.</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¡Es verdad, el campeonato de petanca!</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Eusebia me ganó en las finales. ¡Nunca me olvidaré de ella!</text>
-      </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Pero si lo acaba de hacer...</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Entonces no debería haber ningun problema por darle mi número de teléfono.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¡Muchas gracias nieto!</text>
-      </speak-char>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="Problema4">
-    <dialogue-node nodeindex="0" editor-x="186" editor-y="48">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Menos mal que has venido, he leido una cosa y no se que pensar.</text>
-      </speak-char>
-      <condition>
-        <inactive flag="introProblema4" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>¿Qué pasa?</text>
-      </speak-player>
-      <condition>
-        <inactive flag="introProblema4" />
-      </condition>
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Esto, mira, mira</text>
-      </speak-char>
-      <condition>
-        <inactive flag="introProblema4" />
-      </condition>
-      <child nodeindex="1" />
-    </dialogue-node>
-    <option-node nodeindex="1" random="yes" preListening="yes" editor-x="606" editor-y="411" x="606" y="411">
-      <speak-player>
-        <text>Echemosle un vistazo</text>
-      </speak-player>
-      <condition>
-        <inactive flag="introProblema4" />
-      </condition>
-      <child nodeindex="2" />
-      <speak-player>
-        <text>No parece muy confiable la página sinceramente</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <inactive flag="Superado4(Primera mitad)" />
-        <active flag="introProblema4" />
-      </condition>
-      <child nodeindex="3" />
-      <speak-player>
-        <text>Dejame ver el correo de nuevo</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Superado4(Primera mitad)" />
-      </condition>
-      <child nodeindex="4" />
-      <speak-player>
-        <text>¿Esto no es un correo del tio-abuelo?</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Superado4(Primera mitad)" />
-        <active flag="NombreCorreoP4" />
-      </condition>
-      <child nodeindex="5" />
-      <speak-player>
-        <text>¿Te los envia siempre en este formato?</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Superado4(Primera mitad)" />
-        <active flag="P4_Formato" />
-      </condition>
-      <child nodeindex="6" />
-      <speak-player>
-        <text>No creo que sea de fiar, mejor llama a tu hermano y preguntale</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Superado4(Primera mitad)" />
-        <active flag="P4_SinAvisar" />
-        <active flag="P4_Formato" />
-      </condition>
-      <child nodeindex="7" />
-      <speak-player>
-        <text>Parece todo bien</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Superado4(Primera mitad)" />
-      </condition>
-      <child nodeindex="8" />
-    </option-node>
-    <dialogue-node nodeindex="2" editor-x="1107" editor-y="47">
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Problema_4Inicio" x="449" y="546" transitionTime="0" transitionType="0" />
-          <condition />
-          <activate flag="introProblema4" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="1488" editor-y="251">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¿Cómo?, pero si GetNotSoBadNews es una fuente fidedigna, o eso dicen.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Ademas, ¿qué ganan mintiendo a la gente?</text>
-      </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Esto...</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Mira esto no viene a cuento.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Además de que estos virus se hacen para programas en concreto, asi que las posibilidades son muy pequeñas.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>El tamaño de la imagen tiene que ser más grande que esto para que pueda infectarte.</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Entiendo, creo. Gracias, pero lo que me asusta este este mensaje.</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="4" />
-    </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="2087" editor-y="601">
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Problema_4Final" x="400" y="450" transitionTime="0" transitionType="0" />
-          <condition />
-          <activate flag="Superado4(Primera mitad)" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="1114" editor-y="1989">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Si, normalmente me envia correo con la pensión.</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="9" />
-    </dialogue-node>
-    <dialogue-node nodeindex="6" editor-x="1653" editor-y="878">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>¿Eso qué es?</text>
-      </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Es...</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>¿Pone siempre .docx al final del nombre?</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Ah, no, nunca pone nada de un doctor, normalmente es un .edf</text>
-      </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>.pdf?</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Eso</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="1" />
-      <effect>
-        <activate flag="P4_Formato" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="7" editor-x="2456" editor-y="820">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Vale, muchas gracias por ayudarme</text>
-      </speak-char>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-    <dialogue-node nodeindex="8" editor-x="2238" editor-y="2217">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>Menos mal, ahora, a ver cuanta pensión tengo esta vez.</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="10" />
-    </dialogue-node>
-    <option-node nodeindex="9" random="yes" preListening="yes" editor-x="1653" editor-y="1955" x="1653" y="1955">
-      <speak-player>
-        <text>¿Pero te los envia sin avisar?</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
+    <dialogue-node nodeindex="9" editor-x="1174" editor-y="0">
       <child nodeindex="11" />
+      <effect>
+        <trigger-scene idTarget="Problema_3_Lose" x="320" y="720" transitionTime="4000" transitionType="5" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="10" editor-x="1007" editor-y="173">
       <speak-player>
-        <text>Pues entonces no hay problema</text>
         <resources name="No name" />
+        <text>Abuelo, déjame ver la página</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </dialogue-node>
+    <dialogue-node nodeindex="11" editor-x="1453" editor-y="44">
+      <speak-player>
+        <resources name="No name" />
+        <text>Días más tarde, Harold recibe un correo indicando ha sido pwned.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Porque el software que descargué es un malware que contiene virus.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Los datos de Harold han sido publicados en la web.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Como no ha podido eliminar los virus del ordenador, todos las informaciones que introducen mandan al exterior.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Harold se queda sin ordenador.</text>
       </speak-player>
       <condition />
       <child nodeindex="8" />
-    </option-node>
-    <dialogue-node nodeindex="10" editor-x="2473" editor-y="2217">
-      <child nodeindex="12" />
-      <effect>
-        <trigger-scene idTarget="Problema4_Loose" x="398" y="408" transitionTime="0" transitionType="0" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="11" editor-x="2196" editor-y="1941">
-      <speak-char idTarget="Abuelo">
-        <resources name="No name" />
-        <text>No, normalmente avisa a finales de mes.</text>
-      </speak-char>
-      <condition />
-      <child nodeindex="13" />
-    </dialogue-node>
-    <dialogue-node nodeindex="12" editor-x="2815" editor-y="2210">
-      <speak-player>
-        <resources name="No name" />
-        <text>Más tarde descubrimos que la cuenta de su hermano habia sido robada</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>El documento que envio contenía un script para que le instalase un Ramsonware</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Un Ramsomware es un tipo de programa que restringe el acceso a determinadas partes o archivos del sistema operativo infectado y pide un rescate a cambio de quitar esta restricción.</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-    <dialogue-node nodeindex="13" editor-x="2784" editor-y="1976">
-      <child nodeindex="1" />
-      <effect>
-        <activate flag="P4_SinAvisar" />
-        <condition />
-      </effect>
     </dialogue-node>
   </graph-conversation>
 </eAdventure>
