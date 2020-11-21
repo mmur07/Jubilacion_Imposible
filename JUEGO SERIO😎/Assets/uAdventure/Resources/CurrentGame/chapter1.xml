@@ -77,7 +77,7 @@
           <equals var="capitulosCompletados" value="0" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="Problema4" />
+          <trigger-conversation idTarget="Problema2" />
           <condition />
         </effect>
       </talk-to>
@@ -131,19 +131,19 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/capturaGmail.jpg" />
+      <asset type="background" uri="assets/background/capturaGmail.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="SalirEscritorio" x="1364" y="759" scale="0.08549867" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="SalirEscritorio" x="1887" y="1050" scale="0.11831" layer="0" hasInfluenceArea="no" />
     </objects>
     <characters>
-      <character-ref idTarget="PlayerPos" x="716" y="614" scale="0.01" orientation="2" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="PlayerPos" x="991" y="849" scale="0.01383764" orientation="2" layer="1" hasInfluenceArea="no" />
     </characters>
     <active-areas>
-      <active-area id="SolucionProblema1" rectangular="yes" x="146" y="168" width="317" height="32" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="SolucionProblema1" rectangular="yes" x="253" y="733" width="1421" height="66" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -157,11 +157,13 @@
             <effect>
               <activate flag="Encontrado_1.1" />
               <condition />
+              <speak-player>¿Si solo quieren hacer una transferencia por qué necesitan todo esto?</speak-player>
+              <condition />
             </effect>
           </examine>
         </actions>
       </active-area>
-      <active-area id="SolucionProblema2" rectangular="yes" x="146" y="210" width="823" height="56" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="SolucionProblema2" rectangular="yes" x="249" y="290" width="802" height="43" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -174,6 +176,48 @@
           <examine needsGoTo="no" keepDistance="0" not-effects="no">
             <effect>
               <activate flag="Encontrado_1.2" />
+              <condition />
+              <speak-player>¿Príncipes en Georgia? Me pregunto quién habrá escrito esto...</speak-player>
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+      <active-area id="SolucionProblema3" rectangular="yes" x="605" y="401" width="356" height="44" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <activate flag="Encontrado_1.3" />
+              <condition />
+              <speak-player>¡Menudo chantaje emocional!</speak-player>
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+      <active-area id="SolucionProblema4" rectangular="yes" x="1012" y="683" width="208" height="31" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <speak-player>¡Pero si antes le ha llamado Mikheil! Ha cambiado el nombre de su hermano en cuestion de líneas.</speak-player>
+              <condition />
+              <activate flag="Encontrado_1.4" />
               <condition />
             </effect>
           </examine>
@@ -393,6 +437,16 @@
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
+  <scene id="Problema2_Ending" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Petanca.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
   <object id="CapturaGmail" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/capturaGmail.jpg" />
@@ -490,7 +544,7 @@
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="750" editor-y="49" x="750" y="49">
+    <option-node nodeindex="1" preListening="yes" editor-x="681" editor-y="55" x="681" y="55">
       <speak-player>
         <text>¡Genial! ¿Cuando pasamos a recogerlo?</text>
         <resources name="No name" />
@@ -498,13 +552,13 @@
       <condition />
       <child nodeindex="2" />
       <speak-player>
-        <text>¿No te parece un poco sospechoso? Dejame mirar  el correo un segundo.</text>
+        <text>Dejame leer el correo.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
       <child nodeindex="3" />
       <speak-player>
-        <text>Es un obvio caso de phishing. Mira las primeras lineas.</text>
+        <text>¿Por qué te pediría todas las claves? Es un caso de phishing.</text>
         <resources name="No name" />
       </speak-player>
       <condition>
@@ -519,6 +573,14 @@
         <active flag="Encontrado_1.2" />
       </condition>
       <child nodeindex="5" />
+      <speak-player>
+        <text>Este lenguaje no es normal.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_1.3" />
+      </condition>
+      <child nodeindex="6" />
     </option-node>
     <dialogue-node nodeindex="2" editor-x="1039" editor-y="21">
       <speak-char idTarget="Abuelo">
@@ -531,10 +593,10 @@
         <text>Anda, pásame la tarjeta, lo hago en un momento.</text>
       </speak-char>
       <condition />
-      <child nodeindex="6" />
+      <child nodeindex="7" />
     </dialogue-node>
     <dialogue-node nodeindex="3" editor-x="1546" editor-y="308">
-      <child nodeindex="7" />
+      <child nodeindex="8" />
       <effect>
         <trigger-scene idTarget="Problema_1" x="722" y="609" transitionTime="1000" transitionType="1" />
         <condition />
@@ -542,7 +604,7 @@
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="2060" editor-y="613">
+    <dialogue-node nodeindex="4" editor-x="1854" editor-y="587">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿Qué es eso?</text>
@@ -550,7 +612,7 @@
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Si, es una técnica muy común llamada Phishing donde suplantan a alguien para que cometas acciones que no tendrías que realizar.</text>
+        <text>Es una técnica muy común llamada Phishing donde suplantan a alguien para que cometas acciones que no tendrías que realizar.</text>
       </speak-player>
       <condition />
       <speak-char idTarget="Abuelo">
@@ -560,16 +622,16 @@
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>No, en este caso quería tus datos bancarios, seguramente en el correo te los pedíria.</text>
+        <text>No, en este caso quería tus datos bancarios, si te quisiera hacer una transferencia no necesitaría todas las claves.</text>
       </speak-player>
       <condition />
-      <child nodeindex="8" />
+      <child nodeindex="9" />
       <effect>
         <activate flag="Superado1" />
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="730" editor-y="474">
+    <dialogue-node nodeindex="5" editor-x="1095" editor-y="521">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿Cómo? No soy un experto en la región pero...</text>
@@ -585,15 +647,59 @@
         <text>Pero si lo he dado en historia...</text>
       </speak-player>
       <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1057" editor-y="866">
+      <speak-player>
+        <resources name="No name" />
+        <text>Es muy frecuente que timadores en internet te hablen así.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Quieren chantajearte emocionalmente para que hagas decisiones que no deberías.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Pero no quiero que Mikheil esté triste...</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/NombreIncorrecto.jpg" />
+        </resources>
+        <text>Mikheil no existe Harold. De una línea a otra pasa a llamarle Ketevan.</text>
+      </speak-player>
+      <condition>
+        <active flag="Encontrado_1.4" />
+      </condition>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Igual tiene varios hermanos atrapados en la estación...</text>
+      </speak-char>
+      <condition>
+        <active flag="Encontrado_1.4" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Venga ya Harold, se que te atrae la idea de ganar mucho dinero, pero lo que quiere esta persona es timarte.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Supongo que tienes razón...</text>
+      </speak-char>
+      <condition />
       <child nodeindex="9" />
     </dialogue-node>
-    <option-node nodeindex="6" preListening="yes" editor-x="1307" editor-y="12" x="1307" y="12">
+    <option-node nodeindex="7" preListening="yes" editor-x="1307" editor-y="12" x="1307" y="12">
       <speak-player>
         <text>Aquí tienes abuelo.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="10" />
+      <child nodeindex="11" />
       <speak-player>
         <text>¿Cómo? ¿No es sospechoso? Dejame mirar el correo.</text>
         <resources name="No name" />
@@ -601,7 +707,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="7" editor-x="1785" editor-y="305">
+    <dialogue-node nodeindex="8" editor-x="1807" editor-y="332">
       <speak-char idTarget="PlayerPos">
         <resources name="No name">
           <asset type="image" uri="assets/image/hide-the-pain-harold.jpg" />
@@ -611,25 +717,25 @@
       <condition />
       <end-conversation />
     </dialogue-node>
-    <dialogue-node nodeindex="8" editor-x="2407" editor-y="391">
+    <dialogue-node nodeindex="9" editor-x="2492" editor-y="391">
       <end-conversation>
         <effect>
-          <set-value var="capitulosCompletados" value="1" />
+          <increment var="capitulosCompletados" value="1" />
           <condition />
-          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="100" transitionType="4" />
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="4" />
           <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
-    <option-node nodeindex="9" preListening="yes" editor-x="1038" editor-y="484" x="1038" y="484">
+    <option-node nodeindex="10" preListening="yes" editor-x="1394" editor-y="559" x="1394" y="559">
       <speak-player>
         <text>Bueno, si tu dices que es convincente... Adelante.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="10" />
+      <child nodeindex="11" />
       <speak-player>
-        <text>Es un obvio caso de phishing. Mira las primeras lineas.</text>
+        <text>Es un obvio caso de phishing. ¿Por qué te pediría todos estos datos?</text>
         <resources name="No name" />
       </speak-player>
       <condition>
@@ -643,14 +749,14 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="10" editor-x="1767" editor-y="28">
-      <child nodeindex="11" />
+    <dialogue-node nodeindex="11" editor-x="1767" editor-y="28">
+      <child nodeindex="12" />
       <effect>
-        <trigger-scene idTarget="Problema_1_Lose" x="150" y="337" transitionTime="4000" transitionType="5" />
+        <trigger-scene idTarget="Problema_1_Lose" x="150" y="337" transitionTime="1000" transitionType="5" />
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="11" editor-x="2051" editor-y="235">
+    <dialogue-node nodeindex="12" editor-x="2050" editor-y="208">
       <speak-char idTarget="PlayerPos">
         <resources name="No name" />
         <text>#O Días más tarde, a Harold le robaron miles de euros de su cuenta bancaria.</text>
@@ -671,7 +777,7 @@
         <text>Harold ya no se podrá ir de viaje a las islas Caimán.</text>
       </speak-player>
       <condition />
-      <child nodeindex="8" />
+      <child nodeindex="9" />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Problema2">
@@ -706,7 +812,7 @@
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="690" editor-y="455" x="690" y="455">
+    <option-node nodeindex="1" preListening="yes" editor-x="795" editor-y="497" x="795" y="497">
       <speak-player>
         <text>No debería haber problema, dale tu número de teléfono.</text>
         <resources name="No name" />
@@ -736,7 +842,7 @@
       <condition />
       <child nodeindex="5" />
       <speak-player>
-        <text>¿Sabes a qué se refiere con lo del martes?</text>
+        <text>¿Qué es esto del martes?</text>
         <resources name="No name" />
       </speak-player>
       <condition>
@@ -744,7 +850,7 @@
       </condition>
       <child nodeindex="6" />
       <speak-player>
-        <text>Has agregado a esta persona.</text>
+        <text>¿Has visto que agregaste a esta persona?</text>
         <resources name="No name" />
       </speak-player>
       <condition>
@@ -780,7 +886,7 @@
       <condition />
       <child nodeindex="8" />
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="1374" editor-y="477">
+    <dialogue-node nodeindex="4" editor-x="1533" editor-y="596">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¡Por supuesto!</text>
@@ -795,7 +901,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="1227" editor-y="705">
+    <dialogue-node nodeindex="5" editor-x="1386" editor-y="824">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿En serio?</text>
@@ -877,7 +983,7 @@
       <condition />
       <child nodeindex="11" />
     </dialogue-node>
-    <option-node nodeindex="8" preListening="yes" editor-x="2047" editor-y="73" x="2047" y="73">
+    <option-node nodeindex="8" preListening="yes" editor-x="1819" editor-y="68" x="1819" y="68">
       <speak-player>
         <text>Si</text>
         <resources name="No name" />
@@ -889,7 +995,7 @@
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="13" />
+      <child nodeindex="1" />
     </option-node>
     <option-node nodeindex="9" preListening="yes" editor-x="2176" editor-y="895" x="2176" y="895">
       <speak-player>
@@ -899,7 +1005,7 @@
       <condition>
         <inactive flag="MensajeVisto_Problema2" />
       </condition>
-      <child nodeindex="14" />
+      <child nodeindex="13" />
       <speak-player>
         <text>Déjame mirarlo de nuevo.</text>
         <resources name="No name" />
@@ -907,13 +1013,13 @@
       <condition>
         <active flag="MensajeVisto_Problema2" />
       </condition>
-      <child nodeindex="14" />
+      <child nodeindex="13" />
       <speak-player>
         <text>Hazme caso. Bloquéala</text>
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="15" />
+      <child nodeindex="14" />
     </option-node>
     <option-node nodeindex="10" preListening="yes" editor-x="1984" editor-y="1307" x="1984" y="1307">
       <speak-player>
@@ -929,7 +1035,7 @@
       <condition>
         <inactive flag="Encontrado_2.1" />
       </condition>
-      <child nodeindex="16" />
+      <child nodeindex="15" />
       <speak-player>
         <text>Aquí pone que ya la has agregado.</text>
         <resources name="No name">
@@ -939,7 +1045,7 @@
       <condition>
         <active flag="Encontrado_2.1" />
       </condition>
-      <child nodeindex="17" />
+      <child nodeindex="16" />
     </option-node>
     <option-node nodeindex="11" preListening="yes" editor-x="1533" editor-y="1844" x="1533" y="1844">
       <speak-player>
@@ -947,7 +1053,7 @@
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="15" />
+      <child nodeindex="14" />
       <speak-player>
         <text>Debería mirar el mensaje de nuevo.</text>
         <resources name="No name" />
@@ -955,21 +1061,22 @@
       <condition>
         <inactive flag="Encontrado_2.1" />
       </condition>
-      <child nodeindex="16" />
+      <child nodeindex="15" />
       <speak-player>
-        <text>¿No te suena esto del martes?</text>
+        <text>¿Y esto del martes?</text>
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="17" />
+      <child nodeindex="16" />
     </option-node>
-    <dialogue-node nodeindex="12" editor-x="2288" editor-y="50">
-      <end-conversation />
+    <dialogue-node nodeindex="12" editor-x="2182" editor-y="101">
+      <child nodeindex="17" />
+      <effect>
+        <trigger-scene idTarget="Problema2_Ending" x="800" y="820" transitionTime="1000" transitionType="1" />
+        <condition />
+      </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="13" editor-x="2300" editor-y="258">
-      <child nodeindex="1" />
-    </dialogue-node>
-    <dialogue-node nodeindex="14" editor-x="2621" editor-y="899">
+    <dialogue-node nodeindex="13" editor-x="2621" editor-y="899">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>Aquí tienes.</text>
@@ -984,15 +1091,19 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="15" editor-x="2614" editor-y="1177">
+    <dialogue-node nodeindex="14" editor-x="2614" editor-y="1177">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>Entendido. Uno nunca está seguro al completo.</text>
       </speak-char>
       <condition />
-      <end-conversation />
+      <child nodeindex="18" />
+      <effect>
+        <trigger-scene idTarget="Problema2_Ending" x="800" y="820" transitionTime="1000" transitionType="1" />
+        <condition />
+      </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="16" editor-x="2525" editor-y="1445">
+    <dialogue-node nodeindex="15" editor-x="2533" editor-y="1467">
       <end-conversation>
         <effect>
           <trigger-scene idTarget="Problema_2" x="688" y="558" transitionTime="1000" transitionType="2" />
@@ -1000,7 +1111,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="17" editor-x="2495" editor-y="1688">
+    <dialogue-node nodeindex="16" editor-x="2495" editor-y="1688">
       <speak-player>
         <resources name="No name" />
         <text>¿Seguro que no la conoces de nada?</text>
@@ -1036,7 +1147,91 @@
         <text>¡Muchas gracias nieto!</text>
       </speak-char>
       <condition />
-      <end-conversation />
+      <child nodeindex="19" />
+      <effect>
+        <trigger-scene idTarget="Problema2_Ending" x="800" y="820" transitionTime="1000" transitionType="1" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="17" editor-x="2476" editor-y="70">
+      <speak-player>
+        <resources name="No name" />
+        <text>Resulta que esta mujer era amiga de Harold. ¡Juegan a la petanca juntos!</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Esta vez ha tenido suerte, pero la próxima vez debería ser mas precabido.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Aunque no está mal tener cuidado, no todo es un intento de phishing. </text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <increment var="capitulosCompletados" value="1" />
+          <condition />
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="18" editor-x="2964" editor-y="1171">
+      <speak-player>
+        <resources name="No name" />
+        <text>Resulta que esta señora era amiga de Harold. ¡Juegan juntos a la petanca!</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Harold se olvidó de ella.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Al llegar al martes al club le echó una buena bronca por bloquearle.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No está mal ser precabido, pero no todo en internet es un caso de phishing.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="0" transitionType="0" />
+          <condition />
+          <increment var="capitulosCompletados" value="1" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="19" editor-x="3065" editor-y="1659">
+      <speak-player>
+        <resources name="No name" />
+        <text>Tras darle su número de teléfono, hablaron durante horas sobre los nuevos modelos de petanca.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Está bien ser precabido, pero no todo es un caso de phishing.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Hice bien en investigar sobre la situación.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="2" />
+          <condition />
+          <increment var="capitulosCompletados" value="1" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Problema3">
