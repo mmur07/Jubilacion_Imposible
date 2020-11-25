@@ -315,19 +315,19 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/yourpcisinfected-homepage.jpg" />
+      <asset type="background" uri="assets/background/PaginaVirusFake.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="SalirEscritorio" x="708" y="568" scale="0.06187817" layer="1" hasInfluenceArea="no" />
+      <object-ref idTarget="SalirEscritorio" x="1224" y="1014" scale="0.1105042" layer="1" hasInfluenceArea="no" />
     </objects>
     <characters>
-      <character-ref idTarget="PlayerPos" x="395" y="508" scale="0.01" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="PlayerPos" x="683" y="907" scale="0.01785835" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
     <active-areas>
-      <active-area id="BotonesFalsos" rectangular="yes" x="11" y="103" width="230" height="208" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="BotonesFalsos" rectangular="yes" x="288" y="557" width="643" height="44" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -341,19 +341,13 @@
             <effect>
               <activate flag="Encontrado_3.1" />
               <condition />
-              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">¿Pero por qué no vibra estos botones?. 
-Click derecho....</show-text>
-              <condition />
-              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">Atrás
-Volver a cargar
-Guardar como...
-...</show-text>
+              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">¿28.1%? ¿Por qué no el 100% ya que estamos así? Este lenguaje es muy sospechoso.</show-text>
               <condition />
             </effect>
           </examine>
         </actions>
       </active-area>
-      <active-area id="Microsoftware" rectangular="yes" x="92" y="47" width="619" height="25" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="Microsoftware" rectangular="yes" x="163" y="73" width="961" height="38" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -367,7 +361,7 @@ Guardar como...
             <effect>
               <activate flag="Encontrado_3.2" />
               <condition />
-              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">http://www.microsoftware.com/windows/antivirus</show-text>
+              <show-text x="300" y="300" frontColor="#FFFFFFFF" borderColor="#000000FF" uri="">Micro... ¡MicLosoftware! ¡Menuda cara!</show-text>
               <condition />
             </effect>
           </examine>
@@ -469,6 +463,16 @@ Guardar como...
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
+  <scene id="Problema_4_BuenFinal" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/haroldVictorioso.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
   <object id="CapturaGmail" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/capturaGmail.jpg" />
@@ -499,7 +503,7 @@ Guardar como...
     <actions>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <effect>
-          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="100" transitionType="2" />
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="2" />
           <condition />
         </effect>
       </use>
@@ -626,7 +630,7 @@ Guardar como...
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="1854" editor-y="587">
+    <dialogue-node nodeindex="4" editor-x="1887" editor-y="588">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿Qué es eso?</text>
@@ -651,9 +655,11 @@ Guardar como...
       <effect>
         <activate flag="Superado1" />
         <condition />
+        <trigger-scene idTarget="Problema_4_BuenFinal" x="166" y="375" transitionTime="1000" transitionType="1" />
+        <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="1095" editor-y="521">
+    <dialogue-node nodeindex="5" editor-x="1106" editor-y="537">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿Cómo? No soy un experto en la región pero...</text>
@@ -714,6 +720,10 @@ Guardar como...
       </speak-char>
       <condition />
       <child nodeindex="9" />
+      <effect>
+        <trigger-scene idTarget="Problema_4_BuenFinal" x="166" y="375" transitionTime="1000" transitionType="1" />
+        <condition />
+      </effect>
     </dialogue-node>
     <option-node nodeindex="7" preListening="yes" editor-x="1307" editor-y="12" x="1307" y="12">
       <speak-player>
@@ -739,15 +749,28 @@ Guardar como...
       <condition />
       <end-conversation />
     </dialogue-node>
-    <dialogue-node nodeindex="9" editor-x="2492" editor-y="391">
-      <end-conversation>
-        <effect>
-          <increment var="capitulosCompletados" value="1" />
-          <condition />
-          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="4" />
-          <condition />
-        </effect>
-      </end-conversation>
+    <dialogue-node nodeindex="9" editor-x="2258" editor-y="724">
+      <speak-player>
+        <resources name="No name" />
+        <text>Menos mal que conseguí parar a Harold.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Todo el mundo querría tener una oportunidad así para ser rico, pero lamentablemente este tipo de cosas no ocurren en la vida real.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Los atacantes intentan explotar este sentimiento para obtener información comprometida.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¡Espero que lo recuerde!</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="12" />
     </dialogue-node>
     <option-node nodeindex="10" preListening="yes" editor-x="1394" editor-y="559" x="1394" y="559">
       <speak-player>
@@ -772,13 +795,23 @@ Guardar como...
       <child nodeindex="3" />
     </option-node>
     <dialogue-node nodeindex="11" editor-x="1767" editor-y="28">
-      <child nodeindex="12" />
+      <child nodeindex="13" />
       <effect>
         <trigger-scene idTarget="Problema_1_Lose" x="150" y="337" transitionTime="1000" transitionType="5" />
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="12" editor-x="2050" editor-y="208">
+    <dialogue-node nodeindex="12" editor-x="2549" editor-y="405">
+      <end-conversation>
+        <effect>
+          <increment var="capitulosCompletados" value="1" />
+          <condition />
+          <trigger-scene idTarget="Abuelo1" x="640" y="512" transitionTime="1000" transitionType="2" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="13" editor-x="2050" editor-y="208">
       <speak-char idTarget="PlayerPos">
         <resources name="No name" />
         <text>#O Días más tarde, a Harold le robaron miles de euros de su cuenta bancaria.</text>
@@ -796,10 +829,10 @@ Guardar como...
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Harold ya no se podrá ir de viaje a las islas Caimán.</text>
+        <text>Harold ya no se podrá permitir el viaje a las islas Caimán que tanto deseaba.</text>
       </speak-player>
       <condition />
-      <child nodeindex="9" />
+      <child nodeindex="12" />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Problema2">
@@ -1267,50 +1300,51 @@ Guardar como...
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Hoy encontré una página web que me ayuda a detectar los virus.</text>
+        <text>Hoy encontré una página web que me ayuda a detectar los virus en mi sistema.</text>
       </speak-char>
       <condition>
         <inactive flag="PaginaVisto" />
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿Sabes cuándo hay?</text>
+        <text>¿Sabes cuantos ha detectado?</text>
       </speak-char>
       <condition>
         <inactive flag="PaginaVisto" />
       </condition>
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¡ Hay 5 !</text>
+        <text>¡Hay 5 ni más ni menos!</text>
       </speak-char>
       <condition>
         <inactive flag="PaginaVisto" />
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="305" editor-y="61" x="305" y="61">
+    <option-node nodeindex="1" preListening="yes" editor-x="306" editor-y="61" x="306" y="61">
       <speak-player>
-        <text>¿Cómo? Abuelo, tenemos que eliminarlos</text>
+        <text>¿Te ha dicho cómo eliminarlos?</text>
         <resources name="No name" />
       </speak-player>
       <condition />
       <child nodeindex="2" />
       <speak-player>
-        <text>¿Qué página? Déjame ver un momento</text>
+        <text>¿Puedo ver la página?</text>
         <resources name="No name" />
       </speak-player>
       <condition />
       <child nodeindex="3" />
       <speak-player>
-        <text>Estos botones son falsos. </text>
+        <text>Este lenguaje es muy sospechoso.</text>
         <resources name="No name" />
       </speak-player>
       <condition>
         <active flag="Encontrado_3.1" />
+        <inactive flag="Encontrado_3.2" />
       </condition>
       <child nodeindex="4" />
       <speak-player>
-        <text> parece que "Microsoftware" es un poco largo</text>
+        <text>El link es sospechoso.</text>
         <resources name="No name" />
       </speak-player>
       <condition>
@@ -1318,20 +1352,20 @@ Guardar como...
       </condition>
       <child nodeindex="5" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="789" editor-y="0">
-      <speak-player>
+    <dialogue-node nodeindex="2" editor-x="733" editor-y="41">
+      <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿Cómo eliminamos estos virus?</text>
-      </speak-player>
+        <text>Muy fácil, solo tengo que seguir este enlace desde la página.</text>
+      </speak-char>
       <condition />
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Muy fácil, solo tengo que descargar la actualización del Antivirus</text>
+        <text>Desde ahí podre descargar el antivirus. ¡Qué facil!</text>
       </speak-char>
       <condition />
       <child nodeindex="6" />
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="822" editor-y="404">
+    <dialogue-node nodeindex="3" editor-x="987" editor-y="334">
       <child nodeindex="7" />
       <effect>
         <trigger-scene idTarget="Problema_3" x="395" y="444" transitionTime="400" transitionType="2" />
@@ -1340,80 +1374,82 @@ Guardar como...
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="552" editor-y="538">
-      <speak-player>
-        <resources name="No name" />
-        <text>No es una página real. Es fraudulento</text>
-      </speak-player>
-      <condition />
+    <dialogue-node nodeindex="4" editor-x="669" editor-y="327">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>¿Por qué? pero me ayudo a encontrar virus.</text>
+        <text>¿Por qué?</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Quiere conseguir tu confianza, y te pide que descargues cosas, puede ser un malware</text>
+        <text>Es imposible que consiga detectar que el 28.1% del ordenador esté comprometido.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Es un número arbitrario para asustarte.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Además, alguien de Windows no escribiría de esta manera.</text>
       </speak-player>
       <condition />
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Oh, ooo! entonces como elimino los virus.</text>
+        <text>¡Pero si que es de Windows! Tienes los logos y...</text>
       </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Espere que te hago una examinación con antivirus que tienes instalados ....</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Abuelo, el antivirus dice que estas visitando por una página con virus, que tengas cuidado con esa página.</text>
-      </speak-player>
       <condition />
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
-        <text>Ay, lo cierro ahora.</text>
+        <text>¡El link, el link también es de Windows!</text>
       </speak-char>
       <condition />
-      <child nodeindex="8" />
-    </dialogue-node>
-    <option-node nodeindex="5" preListening="yes" editor-x="179" editor-y="465" x="179" y="465">
       <speak-player>
-        <text>Déjame ver otra vez</text>
+        <resources name="No name" />
+        <text>#O Algo se me debe escapar, debería revisar la página...</text>
       </speak-player>
       <condition />
       <child nodeindex="3" />
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="121" editor-y="486">
       <speak-player>
-        <text>Estos botones no son válidos</text>
         <resources name="No name" />
-      </speak-player>
-      <condition>
-        <active flag="Encontrado_3.2" />
-      </condition>
-      <child nodeindex="4" />
-      <speak-player>
-        <text>Pero siempre es mejor eliminar virus cuando antes</text>
-        <resources name="No name" />
+        <text>Mira mira, lee el link de la página</text>
       </speak-player>
       <condition />
-      <child nodeindex="2" />
-    </option-node>
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Pues... Official.Micro... Espera, no pone Microsoft. ¡Aquí pone Miclosoft!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Así es, es muy importante fijarse bien en los links.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Está hecho de esta manera para que te despistes al leerlo y pienses que es oficial.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="8" />
+    </dialogue-node>
     <option-node nodeindex="6" preListening="yes" editor-x="1003" editor-y="28" x="1003" y="28">
       <speak-player>
-        <text>Ah! Vamos a actualizarla.</text>
+        <text>No veo ningun problema.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
       <child nodeindex="9" />
       <speak-player>
-        <text>¿Actualizar? abuelo, los software se actualiza en WindowStore</text>
+        <text>Puede que la página no sea segura.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
       <child nodeindex="10" />
     </option-node>
-    <dialogue-node nodeindex="7" editor-x="1076" editor-y="498">
+    <dialogue-node nodeindex="7" editor-x="1133" editor-y="570">
       <speak-char idTarget="PlayerPos">
         <resources name="No name">
           <asset type="image" uri="assets/image/hombre-lupa_96743-574.jpg" />
@@ -1423,7 +1459,80 @@ Guardar como...
       <condition />
       <end-conversation />
     </dialogue-node>
-    <dialogue-node nodeindex="8" editor-x="1728" editor-y="684">
+    <dialogue-node nodeindex="8" editor-x="607" editor-y="647">
+      <speak-player>
+        <resources name="No name" />
+        <text>No es una página real de Microsoft. Es fraudulenta.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>¿Por qué? Me ha ayudado a encontrar un montón de virus.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Es una táctica muy común. Intentan crear una sensación de urgencia para que tomes decisiones repentinas e instales software malicioso.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Abuelo">
+        <resources name="No name" />
+        <text>Entonces... ¿Tengo o no tengo un virus?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Si sigues navegando por esta página te aseguro que si.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Por si acaso, voy a hacer un exámen rápido.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Harold... No tienes ningún antivirus activado, ni siquiera el firewall. Son vitales para navegar seguro.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Esto se arregla en un momento...</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¡Y ya está!</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¡Madre mia! Te lo dije, el antivirus está chillando con esta página. Sal cuanto antes.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="11" />
+    </dialogue-node>
+    <dialogue-node nodeindex="9" editor-x="1478" editor-y="20">
+      <child nodeindex="12" />
+      <effect>
+        <trigger-scene idTarget="Problema_3_Lose" x="320" y="720" transitionTime="4000" transitionType="5" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <option-node nodeindex="10" preListening="yes" editor-x="1372" editor-y="362" x="1372" y="362">
+      <speak-player>
+        <text>Será mejor que la examine.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>Aunque si tienes virus mejor no arriesgarse y hacer lo que te dicen.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="9" />
+    </option-node>
+    <dialogue-node nodeindex="11" editor-x="1939" editor-y="679">
       <end-conversation>
         <effect>
           <set-value var="capitulosCompletados" value="3" />
@@ -1433,53 +1542,43 @@ Guardar como...
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="9" editor-x="1324" editor-y="21">
+    <dialogue-node nodeindex="12" editor-x="1769" editor-y="101">
+      <speak-player>
+        <resources name="No name" />
+        <text>Días más tarde, Harold recibe un correo de varias páginas donde tenía una cuenta indicando ha sido pwned.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Esto significa que una o varias personas han conseguido acceso a sus cuentas.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Tras hacer un análisis con un antivirus de confianza, vi que Harold tenía spyware en su ordenador.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Este debió aparecer en el ordenador a la vez que instaló ese "antivirus" de confianza.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Lo que Harold tiene que hacer es cambiar las contraseñas de todas las cuentas que disponga.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Aunque sea tedioso, lo mejor es que tenga una contraseña para cada cuenta.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>El daño que esto puede causar puede llegar a ser muy serio, tendremos que hablar hasta con el banco para cambiar todas las contraseñas.</text>
+      </speak-player>
+      <condition />
       <child nodeindex="11" />
-      <effect>
-        <trigger-scene idTarget="Problema_3_Lose" x="320" y="720" transitionTime="4000" transitionType="5" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <option-node nodeindex="10" preListening="yes" editor-x="1372" editor-y="362" x="1372" y="362">
-      <speak-player>
-        <text>Abuelo , dejame ver la página.</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="3" />
-      <speak-player>
-        <text>Pero también descargo cosas por la web, vamos a actualizar</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="9" />
-    </option-node>
-    <dialogue-node nodeindex="11" editor-x="1734" editor-y="98">
-      <speak-player>
-        <resources name="No name" />
-        <text>Días más tarde, Harold recibe un correo indicando ha sido pwned.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Porque el software que descargué es un malware que contiene virus.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Los datos de Harold han sido publicados en la web.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Como no ha podido eliminar los virus del ordenador, todos las informaciones que introducen mandan al exterior.</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>Harold se queda sin ordenador.</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="8" />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Problema4">
