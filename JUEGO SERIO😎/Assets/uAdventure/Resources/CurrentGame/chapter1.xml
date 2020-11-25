@@ -65,7 +65,7 @@
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Problema 1</documentation>
         <condition>
-          <equals var="capitulosCompletados" value="0" />
+          <equals var="capitulosCompletados" value="-1" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Problema1" />
@@ -95,7 +95,7 @@
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Problema 4</documentation>
         <condition>
-          <equals var="capitulosCompletados" value="3" />
+          <equals var="capitulosCompletados" value="0" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Problema4" />
@@ -1678,7 +1678,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="1488" editor-y="251">
+    <dialogue-node nodeindex="3" editor-x="1426" editor-y="233">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>¿Cómo?, pero si GetNotSoBadNews es una fuente fidedigna, o eso dicen.</text>
@@ -1777,7 +1777,7 @@
         <text>Vale, muchas gracias por ayudarme</text>
       </speak-char>
       <condition />
-      <end-conversation />
+      <child nodeindex="10" />
     </dialogue-node>
     <dialogue-node nodeindex="8" editor-x="2238" editor-y="2217">
       <speak-char idTarget="Abuelo">
@@ -1785,7 +1785,7 @@
         <text>Menos mal, ahora, a ver cuanta pensión tengo esta vez.</text>
       </speak-char>
       <condition />
-      <child nodeindex="10" />
+      <child nodeindex="11" />
     </dialogue-node>
     <option-node nodeindex="9" random="yes" preListening="yes" editor-x="1653" editor-y="1955" x="1653" y="1955">
       <speak-player>
@@ -1793,7 +1793,7 @@
         <resources name="No name" />
       </speak-player>
       <condition />
-      <child nodeindex="11" />
+      <child nodeindex="12" />
       <speak-player>
         <text>Pues entonces no hay problema</text>
         <resources name="No name" />
@@ -1801,22 +1801,30 @@
       <condition />
       <child nodeindex="8" />
     </option-node>
-    <dialogue-node nodeindex="10" editor-x="2473" editor-y="2217">
-      <child nodeindex="12" />
+    <dialogue-node nodeindex="10" editor-x="3390" editor-y="1130">
+      <end-conversation>
+        <effect>
+          <trigger-cutscene idTarget="Creditos" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="11" editor-x="2473" editor-y="2217">
+      <child nodeindex="13" />
       <effect>
         <trigger-scene idTarget="Problema4_Loose" x="398" y="408" transitionTime="0" transitionType="0" />
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="11" editor-x="2196" editor-y="1941">
+    <dialogue-node nodeindex="12" editor-x="2196" editor-y="1941">
       <speak-char idTarget="Abuelo">
         <resources name="No name" />
         <text>No, normalmente avisa a finales de mes.</text>
       </speak-char>
       <condition />
-      <child nodeindex="13" />
+      <child nodeindex="14" />
     </dialogue-node>
-    <dialogue-node nodeindex="12" editor-x="2815" editor-y="2210">
+    <dialogue-node nodeindex="13" editor-x="2815" editor-y="2210">
       <speak-player>
         <resources name="No name" />
         <text>Más tarde descubrimos que la cuenta de su hermano habia sido robada</text>
@@ -1832,9 +1840,9 @@
         <text>Un Ramsomware es un tipo de programa que restringe el acceso a determinadas partes o archivos del sistema operativo infectado y pide un rescate a cambio de quitar esta restricción.</text>
       </speak-player>
       <condition />
-      <end-conversation />
+      <child nodeindex="10" />
     </dialogue-node>
-    <dialogue-node nodeindex="13" editor-x="2784" editor-y="1976">
+    <dialogue-node nodeindex="14" editor-x="2784" editor-y="1976">
       <child nodeindex="1" />
       <effect>
         <activate flag="P4_SinAvisar" />
@@ -1842,4 +1850,13 @@
       </effect>
     </dialogue-node>
   </graph-conversation>
+  <slidescene id="Creditos" start="no" next="go-back" class="accesible" type="cutscene">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="slides" uri="assets/animation/test.eaa.xml" />
+    </resources>
+    <name>
+    </name>
+  </slidescene>
 </eAdventure>
